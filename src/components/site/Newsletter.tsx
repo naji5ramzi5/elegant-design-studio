@@ -10,11 +10,17 @@ export function NewsletterForm({ className }: { className?: string }) {
   async function submit(e: React.FormEvent) {
     e.preventDefault();
     const parsed = z.string().trim().email().max(160).safeParse(email);
-    if (!parsed.success) return toast.error("يرجى إدخال بريد إلكتروني صحيح");
+    if (!parsed.success) {
+      toast.error("يرجى إدخال بريد إلكتروني صحيح");
+      return;
+    }
     setBusy(true);
     const { error } = await supabase.from("newsletter_subscribers").insert({ email: parsed.data.toLowerCase() });
     setBusy(false);
-    if (error && error.code !== "23505") return toast.error("تعذر الاشتراك، حاول مجدداً");
+    if (error && error.code !== "23505") {
+      toast.error("تعذر الاشتراك، حاول مجدداً");
+      return;
+    }
     setEmail("");
     toast.success("تم اشتراكك بنجاح", { description: "سنرسل لك أحدث العروض أولاً بأول." });
   }

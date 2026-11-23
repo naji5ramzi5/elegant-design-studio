@@ -10,7 +10,7 @@ export function SectionHeading({ eyebrow, title, to, search, action = "عرض ا
         <h2 className="text-2xl font-bold tracking-tight md:text-3xl">{title}</h2>
       </div>
       {to && (
-        <Link to={to} search={search} className="group inline-flex shrink-0 items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground">
+        <Link to={to} {...(search ? { search } : {})} className="group inline-flex shrink-0 items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground">
           {action}
           <ArrowLeft className="size-4 transition group-hover:-translate-x-1" />
         </Link>
