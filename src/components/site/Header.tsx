@@ -69,7 +69,7 @@ export function Header() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const first = useRef(true);
+  const first = useRef(0);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -79,16 +79,14 @@ export function Header() {
   }, []);
 
   useEffect(() => {
-    if (first.current) {
-      first.current = false;
-      return;
-    }
-    if (pulse > 0) setCartOpen(true);
+    if (pulse > first.current) setCartOpen(true);
+    first.current = pulse;
   }, [pulse]);
 
   useEffect(() => {
     setMenuOpen(false);
     setSearchOpen(false);
+    setCartOpen(false);
   }, [pathname]);
 
   return (
@@ -142,7 +140,7 @@ export function Header() {
               <Link
                 key={n.label}
                 to={n.to}
-                search={"search" in n ? n.search : undefined}
+                {...("search" in n ? { search: n.search } : {})}
                 activeOptions={{ exact: true, includeSearch: true }}
                 className="whitespace-nowrap rounded-full px-3.5 py-1.5 text-foreground/75 transition hover:bg-muted hover:text-foreground data-[status=active]:bg-primary data-[status=active]:text-primary-foreground"
               >
@@ -168,7 +166,7 @@ export function Header() {
             <SearchBox />
             <nav className="grid gap-1">
               {NAV.map((n) => (
-                <Link key={n.label} to={n.to} search={"search" in n ? n.search : undefined} className="rounded-xl px-3 py-2.5 font-medium hover:bg-muted">{n.label}</Link>
+                <Link key={n.label} to={n.to} {...("search" in n ? { search: n.search } : {})} className="rounded-xl px-3 py-2.5 font-medium hover:bg-muted">{n.label}</Link>
               ))}
               <Link to="/wishlist" className="rounded-xl px-3 py-2.5 font-medium hover:bg-muted">المفضلة</Link>
               <Link to="/compare" className="rounded-xl px-3 py-2.5 font-medium hover:bg-muted">المقارنة</Link>

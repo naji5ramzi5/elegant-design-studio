@@ -100,7 +100,7 @@ export type ProductListParams = z.infer<typeof productListSchema>;
 export const PAGE_SIZE = 12;
 
 export const listProducts = createServerFn({ method: "GET" })
-  .inputValidator((d: ProductListParams) => productListSchema.parse(d))
+  .validator((d: ProductListParams) => productListSchema.parse(d))
   .handler(async ({ data }) => {
     const db = publicDb();
     const cols = CARD_COLS.replace("brand:brands(name, slug)", data.brand ? "brand:brands!inner(name, slug)" : "brand:brands(name, slug)").replace(
@@ -135,7 +135,7 @@ export const listProducts = createServerFn({ method: "GET" })
   });
 
 export const getProduct = createServerFn({ method: "GET" })
-  .inputValidator((d: { slug: string }) => z.object({ slug: z.string().min(1).max(120) }).parse(d))
+  .validator((d: { slug: string }) => z.object({ slug: z.string().min(1).max(120) }).parse(d))
   .handler(async ({ data }) => {
     const db = publicDb();
     const { data: p, error } = await db
@@ -174,7 +174,7 @@ export const getProduct = createServerFn({ method: "GET" })
   });
 
 export const getProductsByIds = createServerFn({ method: "GET" })
-  .inputValidator((d: { ids: string[] }) => z.object({ ids: z.array(z.string().uuid()).max(24) }).parse(d))
+  .validator((d: { ids: string[] }) => z.object({ ids: z.array(z.string().uuid()).max(24) }).parse(d))
   .handler(async ({ data }) => {
     if (data.ids.length === 0) return [];
     const { data: rows, error } = await publicDb()

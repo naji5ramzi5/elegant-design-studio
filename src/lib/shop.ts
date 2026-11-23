@@ -1,3 +1,4 @@
+import { useSyncExternalStore } from "react";
 import { toast } from "sonner";
 import { createPersistedStore } from "./local-store";
 
@@ -27,7 +28,24 @@ const cart = createPersistedStore<CartItem[]>("bg-cart", []);
 const wishlist = createPersistedStore<SavedProduct[]>("bg-wishlist", []);
 const compare = createPersistedStore<string[]>("bg-compare", []);
 const recent = createPersistedStore<string[]>("bg-recent", []);
-const cartPulse = createPersistedStore<number>("bg-cart-pulse", 0);
+// In-memory only: counts add-to-cart actions in this tab so the cart drawer opens on add, never on page load.
+let pulseValue = 0;
+const pulseListeners = new Set<() => void>();
+const cartPulse = {
+  set: (fn: (n: number) => number) => {
+    pulseValue = fn(pulseValue);
+    pulseListeners.forEach((l) => l());
+  },
+  useStore: () =>
+    useSyncExternalStore(
+      (l) => {
+        pulseListeners.add(l);
+        return () => pulseListeners.delete(l);
+      },
+      () => pulseValue,
+      () => 0,
+    ),
+};
 
 export const useCart = cart.useStore;
 export const useWishlist = wishlist.useStore;
