@@ -25,14 +25,14 @@ export const Route = createFileRoute("/products/$slug")({
   head: ({ loaderData }) => ({
     meta: loaderData
       ? [
-          { title: `${loaderData.name} – باسم الغيث` },
-          { name: "description", content: loaderData.description ?? `${loaderData.name} بضمان رسمي من باسم الغيث.` },
+          { title: `${loaderData.name} – متجر الغيث` },
+          { name: "description", content: loaderData.description ?? `${loaderData.name} بضمان رسمي من متجر الغيث.` },
           { property: "og:title", content: loaderData.name },
-          { property: "og:description", content: loaderData.description ?? "متوفر الآن لدى باسم الغيث." },
+          { property: "og:description", content: loaderData.description ?? "متوفر الآن لدى متجر الغيث." },
           { property: "og:type", content: "product" },
           { name: "twitter:card", content: "summary_large_image" },
         ]
-      : [{ title: "المنتج غير متوفر – باسم الغيث" }, { name: "robots", content: "noindex" }],
+      : [{ title: "المنتج غير متوفر – متجر الغيث" }, { name: "robots", content: "noindex" }],
   }),
   component: ProductPage,
 });

@@ -8,9 +8,9 @@ import { toggleWishlist, useWishlist } from "@/lib/shop";
 export const Route = createFileRoute("/wishlist")({
   head: () => ({
     meta: [
-      { title: "المفضلة – باسم الغيث" },
+      { title: "المفضلة – متجر الغيث" },
       { name: "description", content: "المنتجات التي حفظتها في المفضلة." },
-      { property: "og:title", content: "المفضلة – باسم الغيث" },
+      { property: "og:title", content: "المفضلة – متجر الغيث" },
       { property: "og:description", content: "المنتجات التي حفظتها." },
       { name: "robots", content: "noindex" },
     ],

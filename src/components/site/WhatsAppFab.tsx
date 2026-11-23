@@ -6,7 +6,7 @@ export function WhatsAppFab() {
   const { data: s } = useQuery(settingsQuery());
   return (
     <a
-      href={whatsappLink(s?.whatsapp ?? "9647886443032", "مرحباً باسم الغيث، أود الاستفسار عن منتج")}
+      href={whatsappLink(s?.whatsapp ?? "9647886443032", "مرحباً متجر الغيث، أود الاستفسار عن منتج")}
       target="_blank"
       rel="noreferrer"
       aria-label="تواصل عبر واتساب"

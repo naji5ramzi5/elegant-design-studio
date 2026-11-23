@@ -15,9 +15,9 @@ export const Route = createFileRoute("/products/")({
   },
   head: () => ({
     meta: [
-      { title: "كل المنتجات – باسم الغيث" },
+      { title: "كل المنتجات – متجر الغيث" },
       { name: "description", content: "تصفح ثلاجات وغسالات ومكيفات وشاشات وأجهزة مطبخ من أشهر الماركات بأسعار بالدينار العراقي." },
-      { property: "og:title", content: "كل المنتجات – باسم الغيث" },
+      { property: "og:title", content: "كل المنتجات – متجر الغيث" },
       { property: "og:description", content: "أجهزة منزلية أصلية بضمان رسمي وتوصيل لكل العراق." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

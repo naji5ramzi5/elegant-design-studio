@@ -24,9 +24,9 @@ export const Route = createFileRoute("/contact")({
   loader: ({ context }) => context.queryClient.ensureQueryData(settingsQuery()),
   head: () => ({
     meta: [
-      { title: "تواصل معنا – باسم الغيث" },
-      { name: "description", content: "تواصل مع فريق باسم الغيث عبر الهاتف أو واتساب أو نموذج الرسائل." },
-      { property: "og:title", content: "تواصل معنا – باسم الغيث" },
+      { title: "تواصل معنا – متجر الغيث" },
+      { name: "description", content: "تواصل مع فريق متجر الغيث عبر الهاتف أو واتساب أو نموذج الرسائل." },
+      { property: "og:title", content: "تواصل معنا – متجر الغيث" },
       { property: "og:description", content: "فريقنا جاهز للإجابة على استفساراتك." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

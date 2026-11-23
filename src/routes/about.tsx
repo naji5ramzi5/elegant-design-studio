@@ -9,9 +9,9 @@ export const Route = createFileRoute("/about")({
   loader: ({ context }) => context.queryClient.ensureQueryData(settingsQuery()),
   head: () => ({
     meta: [
-      { title: "من نحن – باسم الغيث" },
-      { name: "description", content: "تعرّف على باسم الغيث، وجهتك الموثوقة للأجهزة المنزلية الأصلية في العراق." },
-      { property: "og:title", content: "من نحن – باسم الغيث" },
+      { title: "من نحن – متجر الغيث" },
+      { name: "description", content: "تعرّف على متجر الغيث، وجهتك الموثوقة للأجهزة المنزلية الأصلية في العراق." },
+      { property: "og:title", content: "من نحن – متجر الغيث" },
       { property: "og:description", content: "وجهتك الموثوقة للأجهزة المنزلية الأصلية في العراق." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -37,12 +37,12 @@ function AboutPage() {
           <p className="text-sm font-medium text-gold">قصتنا</p>
           <h2 className="mt-2 text-3xl font-bold leading-tight md:text-4xl">نصنع الراحة في كل بيت عراقي</h2>
           <p className="mt-6 whitespace-pre-line leading-8 text-muted-foreground">
-            {s?.about_text ?? "باسم الغيث متجر متخصص في الأجهزة المنزلية الفاخرة، نختار لك أفضل الماركات العالمية ونقدمها بضمان رسمي وخدمة تليق بك."}
+            {s?.about_text ?? "متجر الغيث متجر متخصص في الأجهزة المنزلية الفاخرة، نختار لك أفضل الماركات العالمية ونقدمها بضمان رسمي وخدمة تليق بك."}
           </p>
           <Button asChild className="mt-8 rounded-full px-6"><Link to="/products">تسوّق الآن</Link></Button>
         </div>
         <div className="relative">
-          <img src="/images/hero/kitchen.webp" alt="مطبخ عصري بأجهزة باسم الغيث" className="aspect-[4/3] w-full rounded-3xl object-cover shadow-lift" />
+          <img src="/images/hero/kitchen.webp" alt="مطبخ عصري بأجهزة متجر الغيث" className="aspect-[4/3] w-full rounded-3xl object-cover shadow-lift" />
           <div className="absolute -bottom-6 start-6 rounded-2xl bg-navy p-5 text-navy-foreground shadow-lift">
             <p className="num text-3xl font-bold text-gold">+10,000</p>
             <p className="text-sm">عميل سعيد في العراق</p>

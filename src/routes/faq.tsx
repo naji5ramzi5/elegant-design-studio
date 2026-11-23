@@ -9,9 +9,9 @@ export const Route = createFileRoute("/faq")({
   loader: ({ context }) => context.queryClient.ensureQueryData(faqsQuery()),
   head: () => ({
     meta: [
-      { title: "الأسئلة الشائعة – باسم الغيث" },
-      { name: "description", content: "إجابات عن التوصيل والدفع والضمان والاستبدال في متجر باسم الغيث." },
-      { property: "og:title", content: "الأسئلة الشائعة – باسم الغيث" },
+      { title: "الأسئلة الشائعة – متجر الغيث" },
+      { name: "description", content: "إجابات عن التوصيل والدفع والضمان والاستبدال في متجر متجر الغيث." },
+      { property: "og:title", content: "الأسئلة الشائعة – متجر الغيث" },
       { property: "og:description", content: "كل ما تحتاج معرفته عن الطلب والتوصيل والضمان." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

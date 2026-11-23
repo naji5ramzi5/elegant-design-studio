@@ -9,10 +9,10 @@ import { formatDateTime, formatIQD, ORDER_STATUS } from "@/lib/format";
 export const Route = createFileRoute("/_authenticated/admin")({
   head: () => ({
     meta: [
-      { title: "لوحة التحكم – باسم الغيث" },
-      { name: "description", content: "لوحة إدارة متجر باسم الغيث." },
-      { property: "og:title", content: "لوحة التحكم – باسم الغيث" },
-      { property: "og:description", content: "لوحة إدارة متجر باسم الغيث." },
+      { title: "لوحة التحكم – متجر الغيث" },
+      { name: "description", content: "لوحة إدارة متجر متجر الغيث." },
+      { property: "og:title", content: "لوحة التحكم – متجر الغيث" },
+      { property: "og:description", content: "لوحة إدارة متجر متجر الغيث." },
       { name: "robots", content: "noindex" },
     ],
   }),
@@ -68,7 +68,7 @@ function AdminPage() {
       <header className="border-b bg-card">
         <div className="container-x flex h-16 items-center justify-between gap-4">
           <div className="flex items-baseline gap-3">
-            <span className="font-brand text-2xl text-gold">باسم الغيث</span>
+            <span className="font-brand text-2xl text-gold">متجر الغيث</span>
             <span className="text-sm text-muted-foreground">لوحة التحكم</span>
           </div>
           <div className="flex items-center gap-2">

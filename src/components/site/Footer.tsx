@@ -64,7 +64,7 @@ export function Footer() {
       </div>
       <div className="border-t border-navy-foreground/10">
         <div className="container-x flex flex-col items-center justify-between gap-3 py-6 text-xs text-navy-foreground/60 sm:flex-row">
-          <p>© <span className="num">{new Date().getFullYear()}</span> باسم الغيث للأجهزة المنزلية. جميع الحقوق محفوظة.</p>
+          <p>© <span className="num">{new Date().getFullYear()}</span> متجر الغيث للأجهزة المنزلية. جميع الحقوق محفوظة.</p>
           <p className="flex items-center gap-3"><span>الدفع عند الاستلام</span><span className="size-1 rounded-full bg-gold" /><span>تحويل بنكي</span><span className="size-1 rounded-full bg-gold" /><span>ضمان رسمي</span></p>
         </div>
       </div>

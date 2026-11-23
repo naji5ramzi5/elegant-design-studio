@@ -13,9 +13,9 @@ export const Route = createFileRoute("/")({
   loader: ({ context }) => context.queryClient.ensureQueryData(homeQuery()),
   head: () => ({
     meta: [
-      { title: "باسم الغيث – أجهزة منزلية فاخرة في العراق" },
+      { title: "متجر الغيث – أجهزة منزلية فاخرة في العراق" },
       { name: "description", content: "ثلاجات، غسالات، مكيفات، شاشات وأجهزة مطبخ من أشهر الماركات بضمان رسمي، توصيل لكل المحافظات والدفع عند الاستلام." },
-      { property: "og:title", content: "باسم الغيث – كل ما يحتاجه منزلك في مكان واحد" },
+      { property: "og:title", content: "متجر الغيث – كل ما يحتاجه منزلك في مكان واحد" },
       { property: "og:description", content: "أجهزة منزلية أصلية بأسعار بالدينار العراقي وتوصيل لجميع المحافظات." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -75,7 +75,7 @@ function HomePage() {
 
       {data.featured.length > 0 && (
         <section className="container-x mt-20">
-          <SectionHeading eyebrow="اختيارات باسم الغيث" title="منتجات مميزة" to="/products" search={{ filter: "featured" }} />
+          <SectionHeading eyebrow="اختيارات متجر الغيث" title="منتجات مميزة" to="/products" search={{ filter: "featured" }} />
           <Grid items={data.featured} />
         </section>
       )}

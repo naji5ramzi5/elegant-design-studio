@@ -9,9 +9,9 @@ import { clearCart } from "@/lib/shop";
 export const Route = createFileRoute("/cart")({
   head: () => ({
     meta: [
-      { title: "سلة التسوق – باسم الغيث" },
-      { name: "description", content: "راجع منتجاتك قبل إتمام الطلب من باسم الغيث." },
-      { property: "og:title", content: "سلة التسوق – باسم الغيث" },
+      { title: "سلة التسوق – متجر الغيث" },
+      { name: "description", content: "راجع منتجاتك قبل إتمام الطلب من متجر الغيث." },
+      { property: "og:title", content: "سلة التسوق – متجر الغيث" },
       { property: "og:description", content: "راجع منتجاتك قبل إتمام الطلب." },
       { name: "robots", content: "noindex" },
     ],

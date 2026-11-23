@@ -11,9 +11,9 @@ import { addToCart, toggleCompare, useCompare } from "@/lib/shop";
 export const Route = createFileRoute("/compare")({
   head: () => ({
     meta: [
-      { title: "مقارنة المنتجات – باسم الغيث" },
+      { title: "مقارنة المنتجات – متجر الغيث" },
       { name: "description", content: "قارن المواصفات والأسعار بين حتى 4 منتجات." },
-      { property: "og:title", content: "مقارنة المنتجات – باسم الغيث" },
+      { property: "og:title", content: "مقارنة المنتجات – متجر الغيث" },
       { property: "og:description", content: "قارن المواصفات والأسعار جنباً إلى جنب." },
       { name: "robots", content: "noindex" },
     ],

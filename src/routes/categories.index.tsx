@@ -8,9 +8,9 @@ export const Route = createFileRoute("/categories/")({
   loader: ({ context }) => context.queryClient.ensureQueryData(taxonomyQuery()),
   head: () => ({
     meta: [
-      { title: "الأقسام – باسم الغيث" },
+      { title: "الأقسام – متجر الغيث" },
       { name: "description", content: "تسوق حسب القسم: ثلاجات، غسالات، مكيفات، شاشات، أفران، مكانس وأجهزة مطبخ." },
-      { property: "og:title", content: "أقسام متجر باسم الغيث" },
+      { property: "og:title", content: "أقسام متجر متجر الغيث" },
       { property: "og:description", content: "كل أقسام الأجهزة المنزلية في مكان واحد." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

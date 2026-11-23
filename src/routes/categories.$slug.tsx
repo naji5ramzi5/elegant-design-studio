@@ -19,9 +19,9 @@ export const Route = createFileRoute("/categories/$slug")({
   },
   head: ({ loaderData }) => ({
     meta: [
-      { title: loaderData ? `${loaderData.name} – باسم الغيث` : "القسم – باسم الغيث" },
-      { name: "description", content: loaderData?.description ?? "تسوق أجهزة هذا القسم من باسم الغيث." },
-      { property: "og:title", content: loaderData ? `${loaderData.name} – باسم الغيث` : "باسم الغيث" },
+      { title: loaderData ? `${loaderData.name} – متجر الغيث` : "القسم – متجر الغيث" },
+      { name: "description", content: loaderData?.description ?? "تسوق أجهزة هذا القسم من متجر الغيث." },
+      { property: "og:title", content: loaderData ? `${loaderData.name} – متجر الغيث` : "متجر الغيث" },
       { property: "og:description", content: loaderData?.description ?? "أجهزة منزلية أصلية بضمان رسمي." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

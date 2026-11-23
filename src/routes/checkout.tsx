@@ -29,9 +29,9 @@ export const Route = createFileRoute("/checkout")({
   loader: ({ context }) => context.queryClient.ensureQueryData(settingsQuery()),
   head: () => ({
     meta: [
-      { title: "إتمام الطلب – باسم الغيث" },
+      { title: "إتمام الطلب – متجر الغيث" },
       { name: "description", content: "أكمل طلبك بالدفع عند الاستلام أو التحويل البنكي." },
-      { property: "og:title", content: "إتمام الطلب – باسم الغيث" },
+      { property: "og:title", content: "إتمام الطلب – متجر الغيث" },
       { property: "og:description", content: "أكمل طلبك بسهولة وأمان." },
       { name: "robots", content: "noindex" },
     ],

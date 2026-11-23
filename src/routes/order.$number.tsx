@@ -8,10 +8,10 @@ import { formatIQD, PAYMENT_LABELS, whatsappLink } from "@/lib/format";
 export const Route = createFileRoute("/order/$number")({
   head: () => ({
     meta: [
-      { title: "تم استلام طلبك – باسم الغيث" },
-      { name: "description", content: "شكراً لطلبك من باسم الغيث." },
-      { property: "og:title", content: "تم استلام طلبك – باسم الغيث" },
-      { property: "og:description", content: "شكراً لطلبك من باسم الغيث." },
+      { title: "تم استلام طلبك – متجر الغيث" },
+      { name: "description", content: "شكراً لطلبك من متجر الغيث." },
+      { property: "og:title", content: "تم استلام طلبك – متجر الغيث" },
+      { property: "og:description", content: "شكراً لطلبك من متجر الغيث." },
       { name: "robots", content: "noindex" },
     ],
   }),

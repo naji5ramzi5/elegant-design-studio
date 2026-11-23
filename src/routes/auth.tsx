@@ -16,10 +16,10 @@ export const Route = createFileRoute("/auth")({
   validateSearch: (s) => searchSchema.parse(s),
   head: () => ({
     meta: [
-      { title: "تسجيل الدخول – لوحة تحكم باسم الغيث" },
-      { name: "description", content: "دخول فريق إدارة متجر باسم الغيث إلى لوحة التحكم." },
-      { property: "og:title", content: "تسجيل الدخول – باسم الغيث" },
-      { property: "og:description", content: "دخول فريق إدارة متجر باسم الغيث." },
+      { title: "تسجيل الدخول – لوحة تحكم متجر الغيث" },
+      { name: "description", content: "دخول فريق إدارة متجر متجر الغيث إلى لوحة التحكم." },
+      { property: "og:title", content: "تسجيل الدخول – متجر الغيث" },
+      { property: "og:description", content: "دخول فريق إدارة متجر متجر الغيث." },
       { name: "robots", content: "noindex" },
     ],
   }),
@@ -90,7 +90,7 @@ function AuthPage() {
         <img src="/images/hero/living.webp" alt="" className="absolute inset-0 h-full w-full object-cover opacity-50" />
         <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/60 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 p-12 text-navy-foreground">
-          <p className="font-brand text-5xl text-gold">باسم الغيث</p>
+          <p className="font-brand text-5xl text-gold">متجر الغيث</p>
           <p className="mt-4 max-w-md text-lg text-navy-foreground/80">لوحة إدارة المتجر — المنتجات والطلبات والعروض في مكان واحد.</p>
         </div>
       </div>

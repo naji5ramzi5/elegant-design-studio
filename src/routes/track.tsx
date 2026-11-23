@@ -14,9 +14,9 @@ export const Route = createFileRoute("/track")({
   validateSearch: (s) => z.object({ order: z.string().max(30).optional() }).parse(s),
   head: () => ({
     meta: [
-      { title: "تتبع الطلب – باسم الغيث" },
+      { title: "تتبع الطلب – متجر الغيث" },
       { name: "description", content: "تابع حالة طلبك باستخدام رقم الطلب ورقم الهاتف." },
-      { property: "og:title", content: "تتبع الطلب – باسم الغيث" },
+      { property: "og:title", content: "تتبع الطلب – متجر الغيث" },
       { property: "og:description", content: "تابع حالة طلبك لحظة بلحظة." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
