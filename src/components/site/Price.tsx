@@ -1,0 +1,18 @@
+import { formatIQD } from "@/lib/format";
+import { cn } from "@/lib/utils";
+
+export function Price({ price, oldPrice, size = "md", className }: { price: number; oldPrice?: number | null; size?: "sm" | "md" | "lg"; className?: string }) {
+  const hasOld = oldPrice != null && oldPrice > price;
+  return (
+    <div className={cn("flex flex-wrap items-baseline gap-x-2 gap-y-0.5", className)}>
+      <span className={cn("font-bold text-foreground", size === "lg" ? "text-3xl" : size === "md" ? "text-lg" : "text-base")}>
+        {formatIQD(price)}
+      </span>
+      {hasOld && (
+        <span className={cn("text-muted-foreground line-through decoration-destructive/60", size === "lg" ? "text-lg" : "text-sm")}>
+          {formatIQD(oldPrice)}
+        </span>
+      )}
+    </div>
+  );
+}
