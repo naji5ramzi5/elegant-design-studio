@@ -37,7 +37,7 @@ export function NewsletterForm({ className }: { className?: string }) {
           aria-label="البريد الإلكتروني"
           className="min-w-0 flex-1 bg-transparent text-end text-sm text-navy-foreground outline-none placeholder:text-navy-foreground/40"
         />
-        <button type="submit" disabled={busy} className="inline-flex h-10 items-center gap-2 rounded-full bg-gold px-5 text-sm font-semibold text-gold-foreground transition hover:shadow-gold disabled:opacity-60">
+        <button type="submit" disabled={busy} className="inline-flex h-10 shrink-0 items-center gap-2 rounded-full bg-gold px-4 text-sm font-semibold sm:px-5 text-gold-foreground transition hover:shadow-gold disabled:opacity-60">
           {busy ? <Loader2 className="size-4 animate-spin" /> : <Send className="size-4" />}
           اشترك
         </button>

@@ -1,3 +1,4 @@
+import { BrandLogo } from "@/components/site/BrandLogo";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { ArrowLeft, BadgeCheck, CreditCard, Headphones, Quote, Truck } from "lucide-react";
@@ -134,11 +135,20 @@ function HomePage() {
 
       {data.brands.length > 0 && (
         <section className="container-x mt-20">
-          <p className="mb-6 text-center text-sm font-medium text-muted-foreground">ماركات عالمية نثق بها</p>
-          <div className="flex flex-wrap items-center justify-center gap-3">
+          <SectionHeading eyebrow="وكلاء معتمدون" title="ماركات عالمية نثق بها" />
+          <div className="grid grid-cols-3 gap-2.5 sm:gap-4 md:grid-cols-5 lg:grid-cols-9">
             {data.brands.map((b) => (
-              <Link key={b.id} to="/products" search={{ brand: b.slug }} className="rounded-full border bg-card px-6 py-3 text-sm font-semibold tracking-widest text-muted-foreground transition hover:border-gold hover:text-foreground" dir="ltr">
-                {(b.name_en ?? b.name).toUpperCase()}
+              <Link
+                key={b.id}
+                to="/products"
+                search={{ brand: b.slug }}
+                aria-label={`منتجات ${b.name}`}
+                className="group flex aspect-[4/3] flex-col items-center justify-center gap-2 rounded-2xl border bg-card px-3 text-foreground/70 shadow-soft transition hover:-translate-y-0.5 hover:border-primary/40 hover:text-primary"
+              >
+                <span className="flex h-9 w-full items-center justify-center">
+                  <BrandLogo slug={b.slug} name={b.name_en ?? b.name} height={32} />
+                </span>
+                <span className="text-[11px] font-medium text-muted-foreground transition group-hover:text-foreground">{b.name}</span>
               </Link>
             ))}
           </div>

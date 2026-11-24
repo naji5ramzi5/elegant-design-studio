@@ -12,7 +12,7 @@ export function Footer() {
   const wa = s?.whatsapp ?? "9647886443032";
   return (
     <footer className="mt-24 bg-navy text-navy-foreground">
-      <div className="container-x grid gap-10 border-b border-navy-foreground/10 py-14 lg:grid-cols-[1.3fr_1fr]">
+      <div className="container-x grid grid-cols-[minmax(0,1fr)] gap-8 border-b border-navy-foreground/10 py-12 sm:gap-10 sm:py-14 lg:grid-cols-[1.3fr_1fr]">
         <div>
           <p className="text-sm font-medium text-gold">النشرة البريدية</p>
           <h2 className="mt-2 text-2xl font-bold md:text-3xl">كن أول من يعرف بالعروض الحصرية</h2>
@@ -20,7 +20,7 @@ export function Footer() {
         </div>
         <NewsletterForm className="self-center" />
       </div>
-      <div className="container-x grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="container-x grid grid-cols-[minmax(0,1fr)] gap-10 py-12 sm:grid-cols-2 sm:py-14 lg:grid-cols-4">
         <div className="space-y-4">
           <Logo tone="light" />
           <p className="text-sm leading-7 text-navy-foreground/70">

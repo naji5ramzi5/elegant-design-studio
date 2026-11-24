@@ -93,9 +93,12 @@ export function Header() {
     <>
       <div className="bg-navy text-navy-foreground">
         <div className="container-x flex h-9 items-center justify-between gap-4 text-xs">
-          <p className="flex items-center gap-2 truncate">
-            <Truck className="size-3.5 text-gold" />
-            توصيل لجميع محافظات العراق — مجاني للطلبات فوق {formatIQD(settings?.free_delivery_threshold ?? 500000)}
+          <p className="flex min-w-0 items-center gap-2">
+            <Truck className="size-3.5 shrink-0 text-gold" />
+            <span className="truncate">
+              <span className="hidden sm:inline">توصيل لجميع محافظات العراق — </span>
+              توصيل مجاني للطلبات فوق {formatIQD(settings?.free_delivery_threshold ?? 500000)}
+            </span>
           </p>
           <a href={`tel:${settings?.phone ?? "07886443032"}`} className="hidden items-center gap-1.5 hover:text-gold sm:flex">
             <Phone className="size-3.5" />
@@ -104,14 +107,14 @@ export function Header() {
         </div>
       </div>
       <header className={cn("sticky top-0 z-40 border-b bg-background/85 backdrop-blur-xl transition-shadow", scrolled && "shadow-soft")}>
-        <div className="container-x flex h-[72px] items-center gap-3 lg:gap-8">
-          <button type="button" onClick={() => setMenuOpen(true)} aria-label="القائمة" className="inline-flex size-10 items-center justify-center rounded-full hover:bg-muted lg:hidden">
+        <div className="container-x flex h-16 items-center gap-1.5 sm:h-[72px] sm:gap-3 lg:gap-8">
+          <button type="button" onClick={() => setMenuOpen(true)} aria-label="القائمة" className="-ms-2 inline-flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-muted lg:hidden">
             <Menu className="size-5" />
           </button>
-          <Logo />
+          <Logo className="min-w-0" />
           <SearchBox className="mx-auto hidden max-w-xl flex-1 md:block" />
-          <div className="ms-auto flex items-center gap-0.5 md:ms-0">
-            <button type="button" onClick={() => setSearchOpen((v) => !v)} aria-label="بحث" className="inline-flex size-10 items-center justify-center rounded-full hover:bg-muted md:hidden">
+          <div className="ms-auto flex shrink-0 items-center md:ms-0 md:gap-0.5">
+            <button type="button" onClick={() => setSearchOpen((v) => !v)} aria-label="بحث" className="inline-flex size-9 sm:size-10 items-center justify-center rounded-full hover:bg-muted md:hidden">
               {searchOpen ? <X className="size-[18px]" /> : <Search className="size-[18px]" />}
             </button>
             <ThemeToggle />
@@ -119,11 +122,11 @@ export function Header() {
               <GitCompareArrows className="size-[18px]" />
               <IconBadge count={compare.length} />
             </Link>
-            <Link to="/wishlist" aria-label="المفضلة" className="relative inline-flex size-10 items-center justify-center rounded-full hover:bg-muted">
+            <Link to="/wishlist" aria-label="المفضلة" className="relative hidden size-10 min-[400px]:inline-flex items-center justify-center rounded-full hover:bg-muted">
               <Heart className="size-[18px]" />
               <IconBadge count={wish.length} />
             </Link>
-            <button type="button" onClick={() => setCartOpen(true)} aria-label="السلة" className="relative inline-flex size-10 items-center justify-center rounded-full hover:bg-muted">
+            <button type="button" onClick={() => setCartOpen(true)} aria-label="السلة" className="relative inline-flex size-9 sm:size-10 items-center justify-center rounded-full hover:bg-muted">
               <ShoppingBag className="size-[18px]" />
               <IconBadge count={count} pulse={pulse} />
             </button>
